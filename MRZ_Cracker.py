@@ -1,6 +1,5 @@
 import requests as req
 from bs4 import BeautifulSoup
-from pyfiglet import figlet_format
 from colorama import Fore as f
 import os , sys
 import time
