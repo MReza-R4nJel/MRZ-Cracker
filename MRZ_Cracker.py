@@ -95,8 +95,10 @@ def Hash_cracker():
 {RED}    __               __   {YELLOW}                         __
 {RED}   / /_  ____ ______/ /_  {YELLOW}   ______________ ______/ /_____  _____
 {RED}  / __ \/ __ `/ ___/ __ \ {YELLOW}  / ___/ ___/ __ `/ ___/ //_/ _ \/ ___/
-{RED} / / / / /_/ (__  ) / / / {YELLOW} / /__/ /  / /_/ / /__/ ,< /  __/ /         {YELLOW}Written by{MAGENTA} MREZA Ranjel
+{RED} / / / / /_/ (__  ) / / / {YELLOW} / /__/ /  / /_/ / /__/ ,< /  __/ / 
 {RED}/_/ /_/\__,_/____/_/ /_/  {YELLOW} \___/_/   \__,_/\___/_/|_|\___/_/
+
+       {YELLOW}Written by{MAGENTA} MREZA Ranjel
 
 {RED}   [*] {GREEN}1- md5
 {RED}   [*] {GREEN}2- sha1
@@ -118,7 +120,7 @@ def Hash_cracker():
             print('')
             print(RED + ' [x] ' + WHITE + 'Please give correct address')
             print('')
-            passfile = input(RED + " [*] " + WHITE + "Enter your password list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
+            passfile = input(RED + " [*] " + WHITE + "Enter your list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
             passwordList = open(passfile , "r").read().split()
 
         for hashCracking in passwordList:
@@ -126,18 +128,18 @@ def Hash_cracker():
             m = hashlib.md5(a).hexdigest()
             if m == Hash:
                 print('')
-                print(GREEN + " [/] " + WHITE + "Password found -> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
+                print(GREEN + " [TRUE] " + WHITE + "-> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
                 break
             else:
                 continue
             
-            print(f"{RED} [x] {WHITE}Password not found !")
+            print(f"{RED} [x] {WHITE}not found !")
 
         
     def sha1a():
         Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
         print('')
-        passfile = input(RED + " [*] " + WHITE + "Enter your password list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
+        passfile = input(RED + " [*] " + WHITE + "Enter your list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
         try:
             passwordList = open(passfile , "r").read().split()
         except:
@@ -148,7 +150,7 @@ def Hash_cracker():
             m = hashlib.sha1(a).hexdigest()
             if m == Hash:
                 print('')
-                print(GREEN + " [/] " + WHITE + "Password found -> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
+                print(GREEN + " [TRUE] " + WHITE + "-> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
                 break
             else:
                 continue
@@ -159,8 +161,7 @@ def Hash_cracker():
     def sha224a():
         Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
         print('')
-        passfile = input(RED + " [*] " + WHITE + "Enter your password list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
-        try:
+        passfile = input(RED + " [*] " + WHITE + "Enter your list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)        try:
             passwordList = open(passfile , "r").read().split()
         except:
             print('')
@@ -170,7 +171,7 @@ def Hash_cracker():
             m = hashlib.sha224(a).hexdigest()
             if m == Hash:
                 print('')
-                print(GREEN + " [/] " + WHITE + "Password found -> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
+                print(GREEN + " [TRUE] " + WHITE + "-> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
                 break
             else:
                 continue
@@ -179,7 +180,7 @@ def Hash_cracker():
     def sha384a():
         Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
         print('')
-        passfile = input(RED + " [*] " + WHITE + "Enter your password list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
+        passfile = input(RED + " [*] " + WHITE + "Enter your list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
         try:
             passwordList = open(passfile , "r").read().split()
         except:
@@ -190,7 +191,7 @@ def Hash_cracker():
             m = hashlib.sha384(a).hexdigest()
             if m == Hash:
                 print('')
-                print(GREEN + " [/] " + WHITE + "Password found -> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
+                print(GREEN + " [TRUE] " + WHITE + "-> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
                 break
             else:
                 continue
@@ -199,7 +200,7 @@ def Hash_cracker():
     def sha512a():
         Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
         print('')
-        passfile = input(RED + " [*] " + WHITE + "Enter your password list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
+        passfile = input(RED + " [*] " + WHITE + "Enter your list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
         try:
             passwordList = open(passfile , "r").read().split()
         except:
@@ -211,7 +212,7 @@ def Hash_cracker():
             if m == Hash:
                 print('')
                 time.sleep(2)
-                print(GREEN + " [/] " + WHITE + "Password found -> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
+                print(GREEN + " [TRUE] " + WHITE + "-> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
                 break
             else:
                 continue
