@@ -9,7 +9,7 @@
 `pip install bs4`<br/>
 `git clone https://github.com/MReza-R4nJel/MRZ-Cracker`<br/>
 `cd MRZ-Cracker`<br/>
-`python MRZ_Cracker`<br/>
+`python MRZ_Cracker.py`<br/>
 ***
 Im in virtual <br/>
     telegram : https://t.me/MSaiPheR
