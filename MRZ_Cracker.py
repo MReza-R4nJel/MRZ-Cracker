@@ -26,12 +26,9 @@ def banner():
     
     print(f"""      {GREEN}Github -> {YELLOW}https://github.com/MReza-R4nJel
     """)
-    print(f"""      {GREEN}Telegram -> {YELLOW}https://t.me/MReza-Devill             {BLUE} Written {YELLOW}by {RED}MREZA-RANJEL 
-    """)
-    print(f"""      {GREEN}Instagram -> {YELLOW}https://instagram.com/mohmdrza_null
-    """)
-    print(f.CYAN+'_'*40 + f"{RED}M{YELLOW}R{BLUE}E{GREEN}Z{MAGENTA}A" + CYEN + '_'*40)
-    print('')
+    print(f"""      {GREEN}Telegram -> {YELLOW}https://t.me/MReza-Devill             {BLUE} Written {YELLOW}by {RED}MREZA-RANJEL \n""")
+    print(f"""      {GREEN}Instagram -> {YELLOW}https://instagram.com/mreza_devil \n""")
+    print(f.CYAN+'_'*40 + f"{RED}M{YELLOW}R{BLUE}E{GREEN}Z{MAGENTA}A" + CYEN + '_'*40 '\n')
 
 def blogfaCracker():
     print(f'''  
@@ -43,16 +40,14 @@ def blogfaCracker():
 {MAGENTA}              /____/
 ''')
 
-    passwordsList = input(RED + " [*] " + WHITE + "Enter your password list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
-    print('')
+    passwordsList = input(RED + " [*] " + WHITE + "Enter your password list file " + CYEN + "(txt)" + WHITE + " : " + GREEN + '\n')
     try:
         passwords_list = open(passwordsList , "r").read().split()
     except:
         print(RED + ' [x] ' + WHITE + 'Please give correct address')
     userne = input(RED + ' [*] ' + WHITE + 'Enter Username : ')
-    print('')
-    print(f.RED + " [x] " + f.GREEN + "Target -> " + f.WHITE + f'https://{userne}.blogfa.com')
-    print('')
+
+    print(f.RED + "\n [x] " + f.GREEN + "Target -> " + f.WHITE + f'https://{userne}.blogfa.com \n')
     login_URL = "https://www.blogfa.com/desktop/login.aspx"
     URL = req.get(login_URL)
     info = URL.text
@@ -85,8 +80,7 @@ def blogfaCracker():
             
             print(f"{RED} [x] {WHITE}Password not found !")
     except:
-        print('')
-        print(" [-] please check your internet or URL or username")
+        print("\n [-] please check your internet or URL or username")
 
 
 def Hash_cracker():
@@ -108,129 +102,38 @@ def Hash_cracker():
 """)
 
     algorithm = input(RED + " [*] " + WHITE + "Your algorithm" + CYEN + " [ENTER]" + WHITE + " : ")
-    print('')
 
-    def md5a():
-        Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
-        print('')
+    def cracking():
+        Hash = input(RED + "\n [*] " + WHITE + "Your hash [ENTER] : \n")
         passfile = input(RED + " [*] " + WHITE + "Enter your password list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
         try:
             passwordList = open(passfile , "r").read().split()
         except:
-            print('')
-            print(RED + ' [x] ' + WHITE + 'Please give correct address')
-            print('')
+            print(RED + '\n [x] ' + WHITE + 'Please give correct address\n')
             passfile = input(RED + " [*] " + WHITE + "Enter your list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
             passwordList = open(passfile , "r").read().split()
 
         for hashCracking in passwordList:
             a = hashCracking.encode()
-            m = hashlib.md5(a).hexdigest()
+            if algorithm == '1':
+                m = hashlib.md5(a).hexdigest()
+            elif algorithm == '2':
+                m = hashlib.sha1(a).hexdigest()
+            elif algorithm == '3':
+                m = hashlib.sha224(a).hexdigest()
+            elif algorithm == '4':
+                m = hashlib.sha384(a).hexdigest()
+            elif algorithm == '5':
+                m = hashlib.sha512(a).hexdigest()
+            else: 
+                print('Please choose correctly')
+                break
             if m == Hash:
-                print('')
-                print(GREEN + " [TRUE] " + WHITE + "-> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
+                print(GREEN + "\n [TRUE] " + WHITE + "-> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
                 break
             else:
-                continue
-            
-            print(f"{RED} [x] {WHITE}not found !")
-
-        
-    def sha1a():
-        Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
-        print('')
-        passfile = input(RED + " [*] " + WHITE + "Enter your list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
-        try:
-            passwordList = open(passfile , "r").read().split()
-        except:
-            print('')
-            print(RED + ' [x] ' + WHITE + 'Please')
-        for hashCracking in passwordList:
-            a = hashCracking.encode()
-            m = hashlib.sha1(a).hexdigest()
-            if m == Hash:
-                print('')
-                print(GREEN + " [TRUE] " + WHITE + "-> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
-                break
-            else:
-                continue
-            
-            print(f"{RED} [x] {WHITE}Password not found !")
-        
-
-    def sha224a():
-        Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
-        print('')
-        passfile = input(RED + " [*] " + WHITE + "Enter your list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)        try:
-            passwordList = open(passfile , "r").read().split()
-        except:
-            print('')
-            print(RED + ' [x] ' + WHITE + 'Please')
-        for hashCracking in passwordList:
-            a = hashCracking.encode()
-            m = hashlib.sha224(a).hexdigest()
-            if m == Hash:
-                print('')
-                print(GREEN + " [TRUE] " + WHITE + "-> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
-                break
-            else:
-                continue
-            print(f"{RED} [x] {WHITE}Password not found !")
-
-    def sha384a():
-        Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
-        print('')
-        passfile = input(RED + " [*] " + WHITE + "Enter your list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
-        try:
-            passwordList = open(passfile , "r").read().split()
-        except:
-            print('')
-            print(RED + ' [x] ' + WHITE + 'Please')
-        for hashCracking in passwordList:
-            a = hashCracking.encode()
-            m = hashlib.sha384(a).hexdigest()
-            if m == Hash:
-                print('')
-                print(GREEN + " [TRUE] " + WHITE + "-> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
-                break
-            else:
-                continue
-            print(f"{RED} [x] {WHITE}Password not found !")
-
-    def sha512a():
-        Hash = input(RED + " [*] " + WHITE + "Your hash [ENTER] : ")
-        print('')
-        passfile = input(RED + " [*] " + WHITE + "Enter your list file " + CYEN + "(txt)" + WHITE + " : " + GREEN)
-        try:
-            passwordList = open(passfile , "r").read().split()
-        except:
-            print('')
-            print(RED + ' [x] ' + WHITE + 'Please hoose correctly !')
-        for hashCracking in passwordList:
-            a = hashCracking.encode()
-            m = hashlib.sha512(a).hexdigest()
-            if m == Hash:
-                print('')
-                time.sleep(2)
-                print(GREEN + " [TRUE] " + WHITE + "-> " + YELLOW + "[ " + WHITE + hashCracking + YELLOW + " ]")
-                break
-            else:
-                continue
-            
-            print(f"{RED} [x] {WHITE}Password not found !")
-
-
-    if algorithm == '1':
-        md5a()
-    elif algorithm == '2':
-        sha1a()
-    elif algorithm == '3':
-        sha224a()
-    elif algorithm == '4':
-        sha384a()
-    elif algorithm == '5':
-        sha512a()
-
+                print(RED + ' [x] ' + WHITE + 'not found')
+    cracking()
 banner()
 
 print(f"""
